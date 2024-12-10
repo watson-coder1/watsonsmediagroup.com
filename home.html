@@ -1,0 +1,2496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Watsons Media Group - Leading video production company in Kenya specializing in corporate videos, documentaries, and creative content">
+    <meta name="keywords" content="video production, media company, Kenya, corporate videos, documentaries">
+    <title>Watsons Media Group - Premier Video Production Company</title>
+    
+    <!-- External Resources -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    
+    <!-- Preloader Styles - Must be first -->
+    <style>
+       .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.loader {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+    </style>
+
+    <!-- Core Styles -->
+    <style>
+        /* Variables */
+        :root {
+            /* Colors */
+            --primary-dark: #1A1E23;
+            --primary-color: #E63946;
+            --secondary-color: #2A9D8F;
+            --accent-color: #FFB703;
+            --dark-blue: #14213D;
+            --light-blue: #457B9D;
+            --cream: #F1FAEE;
+            --gray-dark: #2B2D42;
+            --gray-light: #8D99AE;
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--primary-dark), var(--dark-blue));
+            --gradient-accent: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            --gradient-overlay: linear-gradient(rgba(26, 30, 35, 0.85), rgba(20, 33, 61, 0.95));
+            
+            /* Shadows */
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.15);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.2);
+            --shadow-accent: 0 5px 15px rgba(230, 57, 70, 0.3);
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            
+            /* Typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Poppins', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 2rem;
+            --font-size-4xl: 2.5rem;
+            
+            /* Transitions */
+            --transition-fast: 200ms ease;
+            --transition-normal: 300ms ease;
+            --transition-slow: 500ms ease;
+            
+            /* Z-index */
+            --z-negative: -1;
+            --z-normal: 1;
+            --z-tooltip: 10;
+            --z-fixed: 100;
+            --z-modal: 1000;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+            background-color: var(--primary-dark);
+        }
+
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
+            color: var(--cream);
+            overflow-x: hidden;
+            background: var(--gradient-primary);
+            min-height: 100vh;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Typography Base */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--cream);
+            margin-bottom: var(--space-md);
+        }
+
+        p {
+            margin-bottom: var(--space-md);
+            color: rgba(241, 250, 238, 0.9);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition-normal);
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            font: inherit;
+            color: inherit;
+        }
+
+        /* Utility Classes */
+        .container {
+            width: min(90%, 1200px);
+            margin: 0 auto;
+            padding: 0 var(--space-sm);
+        }
+
+        .text-gradient {
+            background: var(--gradient-accent);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Base Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media Queries Base */
+        @media (max-width: 1200px) {
+            :root {
+                --container-width: 1140px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            :root {
+                --font-size-4xl: 2.25rem;
+                --font-size-3xl: 1.875rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --font-size-4xl: 2rem;
+                --font-size-3xl: 1.75rem;
+                --space-2xl: 3rem;
+            }
+            
+            html {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            :root {
+                --container-width: 100%;
+                --space-xl: 2rem;
+            }
+        }
+        .hero-awards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 2rem;
+}
+
+.award {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 100px;
+}
+
+.award-icon {
+    width: 60px; /* Adjust icon size */
+    height: 60px;
+    margin-bottom: 0.5rem;
+    border-radius: 50%; /* Optional: circle shape */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.award-title {
+    font-size: 0.875rem; /* Adjust title size */
+    color: #f1faee; /* Ensure this matches the hero theme */
+    margin: 0;
+}
+
+    </style>
+</head>
+<body>
+     <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- Navigation and Hero Styles -->
+    <style>
+      /* Navigation Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: var(--z-fixed);
+    background: rgba(26, 30, 35, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+    gap: 1rem; /* Extra gap to avoid overlap */
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    z-index: 2;
+    margin-right: 2rem; /* Add margin to prevent overlap with menu */
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+.logo-image {
+    height: 60px; /* Increased height for better visibility */
+    width: auto;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.75rem; /* Adjusted font size for better readability */
+    font-weight: 700;
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--cream);
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease, transform 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 80%;
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* Navigation Buttons */
+.nav-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.language-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quote-btn {
+    background: var(--primary-color);
+    color: var(--cream);
+    box-shadow: var(--shadow-accent);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.quote-btn:hover {
+    transform: translateY(-2px);
+    background: var(--accent-color);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--cream);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 2;
+}
+
+@media (max-width: 992px) {
+    .navbar-content {
+        padding: 0 1rem;
+    }
+
+    .logo-text {
+        font-size: 1.5rem; /* Reduce text size on smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Initially hide menu on mobile */
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background: rgba(26, 30, 35, 0.95);
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu-toggle.active + .nav-menu {
+        display: flex;
+    }
+}
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 100vh;
+            padding-top: 80px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: var(--gradient-primary);
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .hero-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-overlay);
+        }
+
+        .hero-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: var(--space-2xl) 0;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: var(--space-lg);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            opacity: 0.9;
+            margin-bottom: var(--space-xl);
+            animation: fadeIn 1s ease-out 0.3s forwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: var(--space-xl);
+            animation: fadeIn 1s ease-out 0.6s forwards;
+        }
+
+        .hero-button {
+            padding: 1rem 2rem;
+            border-radius: var(--radius-lg);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition-normal);
+        }
+
+        .hero-button.primary {
+            background: var(--primary-color);
+            color: var(--cream);
+        }
+
+        .hero-button.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--cream);
+        }
+
+        .hero-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-awards {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: var(--space-xl);
+            animation: fadeIn 1s ease-out 0.9s forwards;
+        }
+
+        .award-image {
+            height: 60px;
+            opacity: 0.8;
+            transition: var(--transition-normal);
+            filter: brightness(0) invert(1);
+        }
+
+        .award-image:hover {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background: var(--primary-dark);
+                padding: 2rem;
+                flex-direction: column;
+                gap: 1.5rem;
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-awards {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+
+   <!-- Header and Navigation -->
+<header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <a href="#home" class="logo">
+    <img src="logo.png" alt="Watsons Media Group Logo" class="logo-image">
+    <span class="logo-text">Watsons Media Group</span>
+</a>
+
+                <button class="menu-toggle" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link active">Home</a>
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                    <a href="#blog" class="nav-link">Blog</a>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn language-btn">
+                        EN <i class="fas fa-globe"></i>
+                    </button>
+                    <button class="nav-btn quote-btn">
+                        Get a Quote <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<!-- Hero Section -->
+<section class="hero-section" id="home">
+    <div class="hero-background">
+        <!-- Embedded video background -->
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/M2NWD9telQE?autoplay=1&mute=1&loop=1&playlist=M2NWD9telQE"
+            frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-1;"></iframe>
+    </div>
+
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Crafting Visual Stories That <span class="text-gradient">Inspire</span>
+            </h1>
+            <p class="hero-subtitle">
+                Where creativity meets technical excellence in video production
+            </p>
+            <div class="hero-buttons">
+                <!-- Link to Contact Section for Start Project -->
+                <a href="#contact" class="hero-button primary">
+                    Start Your Project <i class="fas fa-play"></i>
+                </a>
+                <!-- Link to Portfolio Section for View Our Work -->
+                <a href="#portfolio" class="hero-button secondary">
+                    View Our Work <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="hero-awards">
+                <div class="award">
+                    <img src="movie.png" alt="Best Production House 2023" class="award-icon">
+                    <p class="award-title">Best Production House 2024</p>
+                </div>
+                <div class="award">
+                    <img src="africa.png" alt="African Content Award" class="award-icon">
+                    <p class="award-title">County Content Award</p>
+                </div>
+                <div class="award">
+                    <img src="excellent.png" alt="Creative Excellence" class="award-icon">
+                    <p class="award-title"> Nyeri County Creative Excellence 2024</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+   
+<!-- Main Content Section Styles -->
+<style>
+    /* Common Section Styles */
+    .section {
+        padding: var(--space-2xl) 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: var(--space-2xl);
+        position: relative;
+    }
+
+    .section-title {
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--space-sm);
+        position: relative;
+        display: inline-block;
+    }
+
+    .section-subtitle {
+        color: var(--gray-light);
+        font-size: var(--font-size-lg);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Services Section Styling */
+.services-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: #666;
+    font-size: 1.125rem;
+    margin-bottom: 3rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Service Card */
+.service-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.service-icon {
+    font-size: 2rem;
+    color: #fff;
+    background: #FFB703;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.service-icon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: rgba(255, 183, 3, 0.3);
+    z-index: -1;
+    transition: transform 0.4s ease;
+    transform: scale(1.3);
+}
+
+.service-card:hover .service-icon::after {
+    transform: scale(1.6);
+}
+
+.service-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.service-description {
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.service-features {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    color: #444;
+}
+
+.service-features li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-features li::before {
+    content: "✔";
+    color: #FFB703;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.service-link {
+    display: inline-block;
+    color: #FFB703;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.service-link:hover {
+    color: #FACA41;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+   /* Portfolio Section */
+.portfolio-section {
+    padding: 4rem 0;
+    background-color: var(--dark-blue);
+}
+
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background: transparent;
+    color: #f1faee;
+    border: 1px solid #8D99AE;
+    padding: 0.5rem 1.25rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #E63946;
+    color: #ffffff;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-card {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 16/9;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-image {
+    transform: scale(1.15);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 33, 61, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-title {
+    font-size: 1.25rem;
+    color: #f1faee;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-category {
+    color: #FFB703;
+    margin-bottom: 1rem;
+}
+
+.portfolio-btn {
+    background-color: #E63946;
+    color: #ffffff;
+    padding: 0.5rem 1.25rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.portfolio-btn:hover {
+    background-color: #FFB703;
+}
+
+
+/* Stats Section Styling */
+.stats-section {
+    background: linear-gradient(135deg, #1A1E23, #14213D);
+    color: #f1faee;
+    padding: 4rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #FFB703;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    color: #8D99AE;
+    font-size: 1.125rem;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Stats Grid Layout */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Stat Item Styling */
+.stat-item {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 2rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Stat Icon Styling */
+.stat-icon {
+    font-size: 2.5rem;
+    color: #FFB703;
+    margin-bottom: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 183, 3, 0.15);
+    border-radius: 50%;
+}
+
+/* Stat Number */
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #f1faee;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #FFB703, #FACA41);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Stat Label */
+.stat-label {
+    font-size: 1rem;
+    color: #8D99AE;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+    /* Team Section Styling */
+.team-section {
+    padding: 4rem 0;
+    background: var(--dark-blue);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: var(--cream);
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: var(--gray-light);
+    font-size: 1.125rem;
+    margin-bottom: 3rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.team-member {
+    position: relative;
+    background: var(--primary-dark);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+/* Member Image */
+.member-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.1);
+}
+
+/* Social Links */
+.member-social {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    display: flex;
+    gap: 1rem;
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.team-member:hover .member-social {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
+
+.social-link {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover {
+    background: var(--accent-color);
+}
+
+/* Member Information */
+.member-info {
+    padding: 1.5rem;
+}
+
+.member-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+}
+
+.member-position {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.member-bio {
+    color: var(--gray-light);
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+}
+
+</style>
+
+<!-- Main Content -->
+<main>
+    <!-- Services Section -->
+<section id="services" class="section services-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title" data-aos="fade-up">Our Services</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Comprehensive video production solutions tailored to your needs
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <!-- Service Card 1 -->
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3 class="service-title">Video Production</h3>
+                <p class="service-description">
+                    Full-service video production with cutting-edge equipment and experienced crew.
+                </p>
+                <ul class="service-features">
+                    <li>4K/8K Recording</li>
+                    <li>Aerial Cinematography</li>
+                    <li>Multi-Camera Setup</li>
+                </ul>
+                <a href="#" class="service-link">Learn More</a>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon">
+                    <i class="fas fa-film"></i>
+                </div>
+                <h3 class="service-title">Post Production</h3>
+                <p class="service-description">
+                    Professional editing, color grading, and visual effects to perfect your content.
+                </p>
+                <ul class="service-features">
+                    <li>Video Editing</li>
+                    <li>Color Grading</li>
+                    <li>Motion Graphics</li>
+                </ul>
+                <a href="#" class="service-link">Learn More</a>
+            </div>
+            <!-- Service Card for Journalism -->
+           <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+    <div class="service-icon">
+        <i class="fas fa-newspaper"></i>
+    </div>
+    <h3 class="service-title">Journalism Services</h3>
+    <p class="service-description">
+        Expert reporting, storytelling, and investigative journalism to inform and inspire.
+    </p>
+    <ul class="service-features">
+        <li>In-Depth Investigations</li>
+        <li>News Reporting</li>
+        <li>Feature Writing</li>
+    </ul>
+    <a href="#" class="service-link">Learn More</a>
+    </div>
+
+            <!-- Service Card 3 -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon">
+                    <i class="fas fa-pen-fancy"></i>
+                </div>
+                <h3 class="service-title">Content Creation</h3>
+                <p class="service-description">
+                    Strategic content development for multiple platforms and audiences.
+                </p>
+                <ul class="service-features">
+                    <li>Social Media Content</li>
+                    <li>Brand Stories</li>
+                    <li>Documentary Production</li>
+                </ul>
+                <a href="#" class="service-link">Learn More</a>
+            </div>
+        </div>
+    </div>
+ <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+    <div class="service-icon">
+        <i class="fas fa-chalkboard-teacher"></i>
+    </div>
+    <h3 class="service-title">Media Training</h3>
+    <p class="service-description">
+        Equip your team with the skills to confidently handle media interactions and create impactful content.
+    </p>
+    <ul class="service-features">
+        <li>Presentation Skills</li>
+        <li>Media Interview Preparation</li>
+        <li>Content Strategy Workshops</li>
+    </ul>
+    <a href="#" class="service-link">Learn More</a>
+</div>
+
+<div class="service-card" data-aos="fade-up" data-aos-delay="100">
+    <div class="service-icon">
+        <i class="fas fa-laptop-code"></i>
+    </div>
+    <h3 class="service-title">Media Website Design</h3>
+    <p class="service-description">
+        Create stunning websites tailored for media brands and production houses.
+    </p>
+    <ul class="service-features">
+        <li>Custom Themes for Creatives</li>
+        <li>SEO Optimization</li>
+        <li>Portfolio Showcasing</li>
+    </ul>
+    <a href="#" class="service-link">Learn More</a>
+</div>
+<div class="service-card" data-aos="fade-up" data-aos-delay="200">
+    <div class="service-icon">
+        <i class="fas fa-camera"></i>
+    </div>
+    <h3 class="service-title">Photography Services</h3>
+    <p class="service-description">
+        Capture stunning visuals with our professional photography services for all occasions.
+    </p>
+    <ul class="service-features">
+        <li>Event Photography</li>
+        <li>Studio Photoshoots</li>
+        <li>Product Photography</li>
+    </ul>
+    <a href="#" class="service-link">Learn More</a>
+</div>
+
+
+</section>
+
+   <!-- Portfolio Section -->
+<section id="portfolio" class="section portfolio-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Our Portfolio</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Discover our latest projects and creative achievements
+            </p>
+        </div>
+
+        <!-- Portfolio Filters -->
+        <div class="portfolio-filters" data-aos="fade-up" data-aos-delay="200">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="brand-film">Brand Film</button>
+            <button class="filter-btn" data-filter="documentary">Documentary</button>
+            <button class="filter-btn" data-filter="ad-campaign">Ad Campaign</button>
+            <button class="filter-btn" data-filter="social-media">Social Media</button>
+        </div>
+
+        <div class="portfolio-grid">
+            <!-- Portfolio Card 1 with Video -->
+            <div class="portfolio-card brand-film" data-aos="fade-up">
+                <img src="safaricom.png" 
+                     alt="Corporate Video Project" 
+                     class="portfolio-image">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">Corporate Campaign</h3>
+                    <p class="portfolio-category">Brand Film</p>
+                    <a href="https://youtu.be/XC3JNw44Ljo" class="portfolio-btn" data-lightbox="video">View Project</a>
+                </div>
+            </div>
+
+            <!-- Portfolio Card 2 with Video -->
+            <div class="portfolio-card documentary" data-aos="fade-up" data-aos-delay="100">
+                <img src="nature.png" 
+                     alt="Documentary Project" 
+                     class="portfolio-image">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">Nature Documentary</h3>
+                    <p class="portfolio-category">Documentary</p>
+                    <a href="https://youtu.be/8s-Gi4Zk0hU" class="portfolio-btn" data-lightbox="video">View Project</a>
+                </div>
+            </div>
+
+            <!-- Portfolio Card 3 with Video -->
+            <div class="portfolio-card ad-campaign" data-aos="fade-up" data-aos-delay="200">
+                <img src="influencer.png" 
+                     alt="Ad Campaign" 
+                     class="portfolio-image">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">Product Launch</h3>
+                    <p class="portfolio-category">Ad Campaign</p>
+                    <a href="https://youtu.be/mS9MbNq4FLg" class="portfolio-btn" data-lightbox="video">View Project</a>
+                </div>
+            </div>
+
+            <!-- Social Media Portfolio Card 1 -->
+            <div class="portfolio-card social-media" data-aos="fade-up" data-aos-delay="300">
+                <img src="john.jpeg" 
+                     alt="Social Media Post 1" 
+                     class="portfolio-image">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">Instagram Campaign</h3>
+                    <p class="portfolio-category">Insta Shots</p>
+                    <a href="classmate.mp4" class="portfolio-btn" target="_blank">View Post</a>
+                </div>
+            </div>
+
+            <!-- Social Media Portfolio Card 2 -->
+            <div class="portfolio-card social-media" data-aos="fade-up" data-aos-delay="400">
+                <img src="amboseli.png" 
+                     alt="Social Media Post 2" 
+                     class="portfolio-image">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">Twitter Promotion</h3>
+                    <p class="portfolio-category">Twitter Shots</p>
+                    <a href="https://x.com/kenyapics/status/1856756707432562885/photo/1" class="portfolio-btn" target="_blank">View Post</a>
+                </div>
+            </div>
+            <!-- Social Media Portfolio Card 3 -->
+            <div class="portfolio-card social-media" data-aos="fade-up" data-aos-delay="300">
+                <img src="Angel.png" 
+                     alt="Social Media Post 1" 
+                     class="portfolio-image">
+                <div class="portfolio-overlay">
+                    <h3 class="portfolio-title">Tiktok Shot</h3>
+                    <p class="portfolio-category">Tiktok Shots</p>
+                    <a href="Angel.mp4" class="portfolio-btn" target="_blank">View Post</a>
+                </div>
+            </div>
+
+</section>
+
+<!-- Lightbox Modal for Video Playback -->
+<div id="videoLightbox" class="lightbox">
+    <div class="lightbox-content">
+        <span class="lightbox-close">&times;</span>
+        <iframe id="videoFrame" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
+</main>
+
+<!-- Stats Section -->
+<section class="section stats-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Our Achievements</h2>
+            <p class="section-subtitle">Milestones that showcase our journey and success</p>
+        </div>
+        <div class="stats-grid">
+            <!-- Stat Item 1 -->
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="100">
+                <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                <div class="stat-number" data-value="500">500+</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+            <!-- Stat Item 2 -->
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="200">
+                <div class="stat-icon"><i class="fas fa-users"></i></div>
+                <div class="stat-number" data-value="50">50+</div>
+                <div class="stat-label">Team Members</div>
+            </div>
+            <!-- Stat Item 3 -->
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="300">
+                <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                <div class="stat-number" data-value="15">15+</div>
+                <div class="stat-label">Industry Awards</div>
+            </div>
+            <!-- Stat Item 4 -->
+            <div class="stat-item" data-aos="zoom-in" data-aos-delay="400">
+                <div class="stat-icon"><i class="fas fa-smile"></i></div>
+                <div class="stat-number" data-value="300">300+</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Team Section -->
+<section id="team" class="section team-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title" data-aos="fade-up">Our Team</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Meet the creative minds behind our successful projects
+            </p>
+        </div>
+
+        <div class="team-grid">
+            <!-- Team Member 1 -->
+            <div class="team-member" data-aos="fade-up">
+                <div class="member-image">
+                    <img src="watson_wambugu_ceo.png" 
+                         alt="Watsons Wambugu" loading="lazy">
+                    <div class="member-social">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name">Watson Wambugu</h3>
+                    <p class="member-position">CEO & Founder</p>
+                    <p class="member-bio">5+ years of experience in creative direction and storytelling</p>
+                </div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+                <div class="member-image">
+                    <img src="Angel.png" 
+                         alt="Angel Nsekuye" loading="lazy">
+                    <div class="member-social">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name">Angel Nsekuye</h3>
+                    <p class="member-position">Head of Production</p>
+                    <p class="member-bio">A master in video production and technical expertise</p>
+                </div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+                <div class="member-image">
+                    <img src="Faith.png" 
+                         alt="Faith" loading="lazy">
+                    <div class="member-social">
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="member-info">
+                    <h3 class="member-name">Faith</h3>
+                    <p class="member-position">Senior Animator</p>
+                    <p class="member-bio">Specializing in 3D animation and creative visuals</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Testimonials Section -->
+<style>
+    /* Testimonials Section Styling */
+.testimonials-section {
+    padding: 4rem 0;
+    background-color: var(--dark-blue);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #f1faee;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: #8D99AE;
+    font-size: 1.125rem;
+    margin-bottom: 3rem;
+}
+
+.testimonial-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding-bottom: 1rem;
+}
+
+.testimonial-card {
+    flex: 0 0 300px;
+    scroll-snap-align: center;
+    background-color: #1A1E23;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+.testimonial-content {
+    font-size: 1rem;
+    color: #f1faee;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.author-image {
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.author-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-info {
+    text-align: left;
+}
+
+.author-info h4 {
+    font-size: 1.125rem;
+    color: #FFB703;
+    margin-bottom: 0.25rem;
+}
+
+.author-position {
+    font-size: 0.875rem;
+    color: #8D99AE;
+    margin-bottom: 0.5rem;
+}
+
+.rating-stars {
+    color: #FFB703;
+    font-size: 1rem;
+}
+
+.rating-stars i {
+    margin-right: 0.1rem;
+}
+
+/* Scrollable Carousel Styling */
+.testimonial-carousel::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+}
+
+.testimonial-carousel {
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    .section-subtitle {
+        font-size: 1rem;
+    }
+}
+
+</style>
+
+<!-- Testimonials Section -->
+<section class="section testimonials-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Client Testimonials</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                What our clients say about working with us
+            </p>
+        </div>
+
+        <div class="testimonial-carousel">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card" data-aos="fade-up">
+                <div class="testimonial-content">
+                    <p>Working with Watsons Media was an absolute pleasure. Their creativity and professionalism exceeded our expectations.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-image">
+                        <img src="https://placehold.co/200x200/14213D/FFFFFF/webp?text=CLIENT" 
+                             alt="Client Charity" loading="lazy">
+                    </div>
+                    <div class="author-info">
+                        <h4>Ongwae Mary</h4>
+                        <p class="author-position">Marketing Director, Safaricom</p>
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-content">
+                    <p>watsons Media went above and beyond to bring our vision to life. Their team is incredibly talented and dedicated.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-image">
+                        <img src="https://placehold.co/200x200/E63946/FFFFFF/webp?text=CLIENT" 
+                             alt="Client David" loading="lazy">
+                    </div>
+                    <div class="author-info">
+                        <h4>Abdi Salim</h4>
+                        <p class="author-position">Creative Director, Equity Bank</p>
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-content">
+                    <p>Professional, timely, and highly creative. Watsons Media has been a game-changer for our marketing campaigns.</p>
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-image">
+                        <img src="https://placehold.co/200x200/2A9D8F/FFFFFF/webp?text=CLIENT" 
+                             alt="Client Fatuma" loading="lazy">
+                    </div>
+                    <div class="author-info">
+                        <h4>Trevor Noah</h4>
+                        <p class="author-position">Head of Advertising, KCB Group</p>
+                        <div class="rating-stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About Us Section -->
+<section id="about" class="section about-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title" data-aos="fade-up">Our Story</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Cinemark Media Group: Where passion meets purpose.
+            </p>
+        </div>
+
+        <div class="about-grid" data-aos="fade-up" data-aos-delay="200">
+            <!-- Founders' Story Section -->
+            <div class="about-story">
+                <h3 class="about-highlight">Founded in 2023</h3>
+                <p>
+                    Watsons Media Group was born from a vision shared by five innovative students at USIU-Africa. Driven by a passion for visual storytelling, these young creatives came together to forge a company that would redefine video production in Kenya and beyond.
+                </p>
+                <p>
+                    With expertise spanning film, media, and technology, our founders built Cinemark on the principles of creativity, excellence, and commitment. Each project we take on is an opportunity to inspire, inform, and elevate.
+                </p>
+            </div>
+
+            <!-- Mission & Vision Section -->
+            <div class="about-vision">
+                <h3 class="about-highlight">Our Mission</h3>
+                <p>
+                    To bring visions to life with engaging, high-quality content that resonates across diverse platforms. Our mission is to tell stories that not only captivate but also connect, creating lasting impacts for brands and audiences alike.
+                </p>
+                <h3 class="about-highlight">Our Vision</h3>
+                <p>
+                    As a leader in media production, we aim to bridge creativity and technology, pushing boundaries to shape the future of storytelling.
+                </p>
+            </div>
+        </div>
+
+        <div class="about-values" data-aos="fade-up" data-aos-delay="300">
+            <h3 class="about-highlight">Our Values</h3>
+            <ul class="values-list">
+                <li><strong>Innovation:</strong> Constantly pushing creative boundaries.</li>
+                <li><strong>Quality:</strong> Delivering excellence in every frame.</li>
+                <li><strong>Integrity:</strong> Building trust through transparent and honest relationships.</li>
+                <li><strong>Collaboration:</strong> Working together for impactful results.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<style>
+/* About Section Styling */
+.about-section {
+    background: #ffffff;
+    padding: 4rem 0;
+    text-align: center;
+    color: #333;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #E63946;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: #8D99AE;
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* About Content Grid */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-top: 2rem;
+    align-items: start;
+}
+
+/* About Highlights and Content */
+.about-highlight {
+    font-size: 1.75rem;
+    color: #FFB703;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.about-story p,
+.about-vision p,
+.about-values p {
+    line-height: 1.8;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Values List Styling */
+.about-values {
+    margin-top: 2rem;
+}
+
+.values-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.values-list li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #333;
+}
+
+.values-list strong {
+    color: #E63946;
+}
+height: 1.8;
+}
+</style>
+
+<!-- Contact Section -->
+<style>
+    /* Contact Section Styling */
+.contact-section {
+    padding: 4rem 0;
+    background: var(--dark-blue);
+    color: #f1faee;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #f1faee;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle {
+    color: #8D99AE;
+    font-size: 1.125rem;
+    margin-bottom: 3rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin-bottom: 3rem;
+}
+
+/* Contact Info */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: start;
+    gap: 1rem;
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+    color: #FFB703;
+    flex-shrink: 0;
+}
+
+.contact-social {
+    margin-top: 2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.contact-social a {
+    color: #f1faee;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.contact-social a:hover {
+    color: #FFB703;
+}
+
+/* Contact Form */
+.contact-form {
+    background: #1A1E23;
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.form-label {
+    font-size: 0.875rem;
+    color: #8D99AE;
+    margin-bottom: 0.5rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #2B2D42;
+    background: #1A1E23;
+    color: #f1faee;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    border-color: #FFB703;
+    outline: none;
+}
+
+.form-submit {
+    background: #FFB703;
+    color: #1A1E23;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.form-submit:hover {
+    background-color: #FACA41;
+}
+
+/* Map Styling */
+.map-container {
+    margin-top: 3rem;
+}
+
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Blog Section Styling */
+.blog-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.blog-card {
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.blog-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.blog-content {
+    padding: 1.5rem;
+}
+
+.blog-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.blog-excerpt {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.blog-link {
+    color: #FFB703;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.blog-link:hover {
+    color: #FACA41;
+}
+
+</style>
+
+<!-- Contact Section -->
+<section id="contact" class="section contact-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Ready to start your next project? Let's talk!
+            </p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Contact Info -->
+            <div class="contact-info" data-aos="fade-right">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h4>Location</h4>
+                        <p>TRM Nairobi, Next to USIU-Africa Kenya</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <h4>Phone</h4>
+                        <p>+254 711 503023</p>
+                        <p>+254 716 227375</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>info@watsonsmedia.com</p>
+                        <p>support@watsonsmedia.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h4>Office Hours</h4>
+                        <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                        <p>Saturday: 10:00 AM - 4:00 PM</p>
+                    </div>
+                </div>
+
+                <!-- Social Media Links -->
+                <div class="contact-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <form class="contact-form" data-aos="fade-left">
+                <div class="form-group">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" id="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" id="phone" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject" class="form-label">Subject</label>
+                    <select id="subject" class="form-input" required>
+                        <option value="">Select a subject</option>
+                        <option value="General Inquiry">General Inquiry</option>
+                        <option value="Project Proposal">Project Proposal</option>
+                        <option value="Support Request">Support Request</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea id="message" class="form-input" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Map Embed -->
+        <div class="map-container" data-aos="fade-up" data-aos-delay="300">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3172.0345951124513!2d-122.083851!3d37.386051!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fba2d6b0d4d6f%3A0x4b39199e15d6e9a1!2sGoogleplex!5e0!3m2!1sen!2sus!4v1596740352809!5m2!1sen!2sus"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Section -->
+<section id="blog" class="section blog-section">
+    <div class="container">
+        <div class="section-header" data-aos="fade-up">
+            <h2 class="section-title">Latest Articles</h2>
+            <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+                Stay updated with industry insights, tips, and stories from our team.
+            </p>
+        </div>
+
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <div class="blog-card" data-aos="fade-up">
+                <div class="blog-image">
+                    <img src="blog1.jpg" alt="Blog Post 1 Image">
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-title">The Future of Video Production</h3>
+                    <p class="blog-excerpt">
+                        Discover how technology is reshaping the video production industry and what it means for creators.
+                    </p>
+                    <a href="blog1.html" class="blog-link">Read More</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 2 -->
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="blog-image">
+                    <img src="blog2.jpg" alt="Blog Post 2 Image">
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-title">5 Tips for Creating Engaging Content</h3>
+                    <p class="blog-excerpt">
+                        Learn how to captivate your audience with these expert tips on creating compelling videos.
+                    </p>
+                    <a href="blog2.html" class="blog-link">Read More</a>
+                </div>
+            </div>
+
+            <!-- Blog Post 3 -->
+            <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="blog-image">
+                    <img src="blog3.jpg" alt="Blog Post 3 Image">
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-title">Behind the Scenes at Watsons Media</h3>
+                    <p class="blog-excerpt">
+                        Take a glimpse into how we create award-winning projects with our talented team.
+                    </p>
+                    <a href="blog3.html" class="blog-link">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Section -->
+<style>
+    /* Footer Styling */
+.footer {
+    background-color: #1A1E23;
+    color: #f1faee;
+    padding-top: 3rem;
+}
+
+.footer-main {
+    padding-bottom: 2rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Footer About */
+.footer-about p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer Links */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links h3,
+.footer-about h3,
+.footer-social h3,
+.footer-newsletter h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #FFB703;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links ul li a {
+    color: #f1faee;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #FFB703;
+}
+
+/* Footer Social */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #f1faee;
+    font-size: 1.25rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #FFB703;
+}
+
+/* Footer Newsletter */
+.footer-newsletter p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 0.75rem;
+    border: none;
+    border-radius: var(--radius-md);
+    flex: 1;
+    background-color: #2B2D42;
+    color: #f1faee;
+    font-size: 0.875rem;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: #8D99AE;
+}
+
+.newsletter-form button {
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: var(--radius-md);
+    background-color: #FFB703;
+    color: #1A1E23;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #FACA41;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    background-color: #111418;
+    padding: 1rem 0;
+    text-align: center;
+    color: #8D99AE;
+    font-size: 0.875rem;
+}
+
+.footer-bottom p {
+    margin: 0.25rem 0;
+}
+
+.footer-bottom a {
+    color: #FFB703;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-bottom a:hover {
+    color: #FACA41;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.map-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Maintain a 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Optional: Add shadow */
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+</style>
+
+<!-- Footer Section -->
+<footer class="footer">
+    <div class="footer-main">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- About Section -->
+                <div class="footer-about">
+                    <h3>About Us</h3>
+                    <p>Watsons Media Group is a leading video production company based in Nairobi. We specialize in creating engaging visual stories that inspire audiences and drive results.</p>
+                    <p><strong>Address:</strong> TRM, Nairobi, Next to USIU-Africa Kenya</p>
+                    <p><strong>Email:</strong> info@watsonsmedia.com</p>
+                    <p><strong>Phone:</strong> +254 711503023</p>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#blog">Blog</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- Social Media Section -->
+                <div class="footer-social">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <!-- Newsletter Section -->
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for the latest updates on our projects and industry insights.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2024 Watsons Media Group. All rights reserved.</p>
+            <p>Designed by <a href="https://watsonsdevelopers.com">Watsons Developers</a></p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Initialize AOS -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    AOS.init({
+        duration: 800,
+        offset: 50,
+        once: true,
+        easing: 'ease-in-out'
+    });
+</script>
+ <!-- JavaScript to Hide Preloader -->
+    <script>
+        window.addEventListener('load', () => {
+            const preloader = document.querySelector('.preloader');
+            if (preloader) {
+                preloader.style.display = 'none';
+            } else {
+                console.error('Preloader element not found');
+            }
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+    const blogGrid = document.querySelector(".blog-grid");
+
+    // JSON data
+    const blogPosts = [
+        {
+            "title": "The Future of Video Production",
+            "image": "blog1.jpg",
+            "excerpt": "Discover how technology is reshaping the video production industry...",
+            "link": "blog1.html"
+        },
+        {
+            "title": "5 Tips for Creating Engaging Content",
+            "image": "blog2.jpg",
+            "excerpt": "Learn how to captivate your audience with expert tips...",
+            "link": "blog2.html"
+        }
+    ];
+
+    // Render blog posts
+    blogPosts.forEach((post) => {
+        const blogCard = `
+            <div class="blog-card">
+                <div class="blog-image">
+                    <img src="${post.image}" alt="${post.title}">
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-title">${post.title}</h3>
+                    <p class="blog-excerpt">${post.excerpt}</p>
+                    <a href="${post.link}" class="blog-link" target="_blank">Read More</a>
+                </div>
+            </div>
+        `;
+        blogGrid.innerHTML += blogCard;
+    });
+});
+
+    </script>
+</body>
+</html>

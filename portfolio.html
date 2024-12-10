@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Watsons Media Group Kenya</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="navbar">
+      <h1 class="logo">Watsons Media Group Kenya</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+           <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="portfolio-hero-section">
+    <div class="hero-content">
+      <h2>Our Portfolio</h2>
+      <p>Showcasing Our Best Work Across Kenya and Beyond</p>
+    </div>
+  </section>
+
+  <!-- Filter Section -->
+  <section class="filter-section">
+    <h3>Filter Projects</h3>
+    <div class="filters">
+      <button onclick="filterProjects('all')">All</button>
+      <button onclick="filterProjects('commercial')">Commercial</button>
+      <button onclick="filterProjects('documentary')">Documentary</button>
+      <button onclick="filterProjects('corporate')">Corporate</button>
+      <button onclick="filterProjects('social-media')">Social Media</button>
+    </div>
+  </section>
+
+  <!-- Portfolio Grid Section with Videos and Images -->
+  <section class="portfolio-grid">
+    <div class="portfolio-item commercial">
+      <video controls width="100%" poster="commercial1-thumbnail.jpg">
+        <source src="commercial1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="portfolio-overlay">
+        <h4>Commercial Project 1</h4>
+        <p>Engaging brand promotion video for a leading Kenyan retail chain.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item documentary">
+      <video controls width="100%" poster="documentary1-thumbnail.jpg">
+        <source src="documentary1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="portfolio-overlay">
+        <h4>Documentary Project 1</h4>
+        <p>An insightful documentary on Kenya’s wildlife conservation efforts.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item corporate">
+      <video controls width="100%" poster="corporate1-thumbnail.jpg">
+        <source src="corporate1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="portfolio-overlay">
+        <h4>Corporate Project 1</h4>
+        <p>A corporate video for a leading tech company based in Nairobi.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item social-media">
+      <video controls width="100%" poster="socialmedia1-thumbnail.jpg">
+        <source src="socialmedia1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="portfolio-overlay">
+        <h4>Social Media Campaign 1</h4>
+        <p>Creative content for a national social media marketing campaign.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item documentary">
+      <video controls width="100%" poster="documentary2-thumbnail.jpg">
+        <source src="documentary2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="portfolio-overlay">
+        <h4>Documentary Project 2</h4>
+        <p>Exploring Kenya’s rich coastal heritage and marine conservation efforts.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item commercial">
+      <video controls width="100%" poster="commercial2-thumbnail.jpg">
+        <source src="commercial2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="portfolio-overlay">
+        <h4>Commercial Project 2</h4>
+        <p>Engaging promotional video for a popular Kenyan beverage brand.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item commercial">
+      <img src="project-image1.jpg" alt="Commercial Image Project">
+      <div class="portfolio-overlay">
+        <h4>Commercial Project 3</h4>
+        <p>Visual imagery for a regional fashion brand campaign.</p>
+      </div>
+    </div>
+
+    <div class="portfolio-item corporate">
+      <img src="project-image2.jpg" alt="Corporate Image Project">
+      <div class="portfolio-overlay">
+        <h4>Corporate Project 2</h4>
+        <p>Photographic portfolio for a corporate event in Nairobi.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client Testimonials Section -->
+  <section class="testimonials-section">
+    <h3>What Our Clients Say</h3>
+    <div class="testimonial-card">
+      <p>"Watsons Media brought our brand story to life with such creativity and precision. We highly recommend their services!"</p>
+      <h5>- Jane Mwangi, CEO of Retail Chain</h5>
+    </div>
+    <div class="testimonial-card">
+      <p>"Their dedication to capturing every detail was truly impressive. We couldn’t be happier with the documentary results."</p>
+      <h5>- David Otieno, Conservation NGO</h5>
+    </div>
+    <div class="testimonial-card">
+      <p>"Watsons Media professionalism and quality work have set a high standard in the industry. The corporate video exceeded our expectations."</p>
+      <h5>- Emily Wanjiru, Head of Marketing</h5>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <h3>Interested in Creating Impactful Media?</h3>
+    <p>Whether you need a commercial, a documentary, or engaging social media content, we’re here to bring your vision to life.</p>
+    <button onclick="location.href='contact.html'" class="cta-button">Contact Us Today</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2024 watsons Media Group Kenya. All Rights Reserved.</p>
+      <nav class="footer-nav">
+        <a href="home.html">Home</a> | <a href="about.html">About</a> | <a href="services.html">Services</a> | <a href="portfolio.html">Portfolio</a> | <a href="contact.html">Contact</a> | <a href="blog.html">Blog</a>
+      </nav>
+      <div class="social-links">
+        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Filter Functionality -->
+  <script>
+    function filterProjects(category) {
+      const items = document.querySelectorAll('.portfolio-item');
+      items.forEach(item => {
+        if (category === 'all' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
